@@ -1,4 +1,6 @@
-import * as tf from '@tensorflow/tfjs'
+// import * as tf from '@tensorflow/tfjs'
+import * as tf from '@tensorflow/tfjs-core';
+import '@tensorflow/tfjs-backend-webgl';
 import {GraphModel} from "@tensorflow/tfjs-converter/dist/executor/graph_model";
 
 const COCO_NAMES = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
@@ -11,7 +13,7 @@ const COCO_NAMES = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
     'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
     'hair drier', 'toothbrush'];
 
-const INFERENCE_RESOLUTION: [number, number] = [640, 640];
+const INFERENCE_RESOLUTION: [number, number] = [400, 400];
 
 export interface ModelConfig {
     source: string | File[];
